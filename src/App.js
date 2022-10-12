@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import { useEffect, useState } from "react"
+import { getData } from './DB/getData';
+
 import './App.css';
 
-function App() {
+export const App = () => {
+
+  const [city, setCity] = useState({})
+
+  useEffect(() => {
+    getData(-23.573664488701304, -65.39794969009938)
+      .then(resp => {
+        const clima = {
+          latitude: resp.latitude,
+          longitud: resp.longitude,
+          temperatura: resp.current_weather.temperature,
+          velocidadviento: resp.current_weather.windspeed
+        }
+        setCity(clima)
+      })
+  }, [])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <pre>
+        {
+          JSON.stringify(city, null, 2)
+        }
+      </pre>
     </div>
   );
 }
-
-export default App;
