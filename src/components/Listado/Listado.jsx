@@ -5,7 +5,7 @@ const Listado = ({ tarjetas }) => {
   return (
     <div className='grid'>
       {tarjetas.map((card) => (
-        <Tarjeta key={card.id} palette={card} />
+        <Tarjeta key={card.id} card={card} />
       ))}
     </div>
   );
