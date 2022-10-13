@@ -23,7 +23,7 @@ const Navigation = () => {
     <>
       <div className='navigation'>
         <Link className='logo-container' to='/'>
-          <img src={palettoLogo} alt='Logo' className='logo' />
+          <img src="https://w7.pngwing.com/pngs/958/648/png-transparent-the-weather-channel-inc-yahoo-computer-icons-weather-purple-violet-magenta-thumbnail.png" alt='Logo' className='logo' />
         </Link>
         <div className='nav-links-container'>
           {currentUser ? (

@@ -7,6 +7,7 @@ import { TarjetasContext } from '../../context/TarjetasContext';
 
 const Home = () => {
   const { tarjetas } = useContext(TarjetasContext);
+
 //   const { favorites } = useContext(FavoritesContext);
 //   const { filters } = useContext(FiltersContext);
 
