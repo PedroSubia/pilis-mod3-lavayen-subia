@@ -1,0 +1,13 @@
+##Credenciales##
+
+        email: lu14393@gmail.com
+        password: 123456
+ 
+        email: negro@gmail.com
+        password: "123123
+    
+        email: profeLLampa@gmail.com
+        password: profe123
+    
+        email: profeMendoza@gmail.com
+        password: profe456

@@ -5,7 +5,7 @@ import { UserContext } from '../../context/UserContext';
 import Swal from 'sweetalert2'
 import './Login.css'
 
-const LoginRef = () => {
+const Login = () => {
   const { setCurrentUser } = useContext(UserContext)
   const username = useRef()
   const password = useRef()
@@ -73,4 +73,4 @@ const LoginRef = () => {
     </div>
   )
 }
-export default LoginRef
+export default Login
