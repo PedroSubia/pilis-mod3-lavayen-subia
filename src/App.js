@@ -9,7 +9,7 @@ import { TarjetasContext} from './context/TarjetasContext'
 import TarjetaDetalles from './routes/Tarjeta/TarjetaDetalles';
 import TarjetaCreacion from './routes/Tarjeta/TarjetaCreacion';
 import Navigation from './routes/Navigation/Navigation';
-import LoginRef from './routes/Login/LoginRef';
+import Login from './routes/Login/LoginRef';
 
 // import Login from './routes/Login/LoginRef';
 // import LoginControlled from './routes/Login/LoginControlled';
@@ -34,7 +34,7 @@ export const App = () => {
           <Routes>
             <Route path='/' element={<Navigation/>}>
               <Route path='home' element={<Home/>}/>
-              {/* <Route path='login' element={<LoginRef/>}/> */}
+              <Route path='login' element={<Login/>}/>
               <Route path='card/:id' element={<TarjetaDetalles/>}/>
               {/* <Route path='card/create' element={<TarjetaCreacion/>}/> */}
             </Route>
