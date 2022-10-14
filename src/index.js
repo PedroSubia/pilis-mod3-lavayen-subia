@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   //<React.StrictMode>
     <BrowserRouter>
-      {/* <UserProvider> */}
+      <UserProvider>
         <TarjetasProvider>
         {/* <ColorPalettesProvider>
           <FavoritesProvider>
@@ -24,7 +24,7 @@ root.render(
           </FavoritesProvider>
         </ColorPalettesProvider> */}
         </TarjetasProvider>
-     {/* </UserProvider> */}
+     </UserProvider>
     </BrowserRouter>
   //</React.StrictMode>
 );
