@@ -33,10 +33,10 @@ export const App = () => {
       <div className='App'>
           <Routes>
             <Route path='/' element={<Navigation/>}>
-              <Route path='home' element={<Home/>}/>
-              {/* <Route path='login' element={<LoginRef/>}/> */}
+              <Route index element={<Home/>}/>
+              <Route path='login' element={<LoginRef/>}/>
               <Route path='card/:id' element={<TarjetaDetalles/>}/>
-              {/* <Route path='card/create' element={<TarjetaCreacion/>}/> */}
+              <Route path='card/create' element={<TarjetaCreacion/>}/>
             </Route>
           </Routes>
       </div>

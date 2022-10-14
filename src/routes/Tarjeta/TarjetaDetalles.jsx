@@ -14,14 +14,14 @@ const TarjetaDetalles = () => {
     <div className='card-display-container'>
       <div className='card-display-card'>
         <h1 className='card-display-name'>{tarjeta.cityName}</h1>
-        <img src={tarjeta.image} alt="image no avaliable" />
+        <img className='imagen-ciudad' src={tarjeta.image} alt="image no avaliable" />
         <h2>Temperatura actual: {tarjeta.current_weather.temperature} C°</h2>
         <h3>Latitud geografica: {tarjeta.latitude}</h3>
         <h3>Longitud geografica: {tarjeta.longitude}</h3>
         <h3>Velocidad actual del viento: {tarjeta.current_weather.windspeed}</h3>
       </div>
       
-      <Link className='btn-back' to='/home'>
+      <Link className='btn-back' to='/'>
         Volver al Inicio
       </Link>
     </div>

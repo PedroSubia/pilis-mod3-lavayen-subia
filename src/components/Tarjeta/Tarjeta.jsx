@@ -20,7 +20,7 @@ const Tarjeta = ({ card }) => {
           // style={{ backgroundColor: color }}
           // onClick={() => copyToClipboard(color)}
         >
-          <img src={image} alt="image no avaliable" />
+          <img className='imagen-ciudad' src={image} alt="image no avaliable" />
 
           {/* <div className='hex-code'>{color}</div> */}
         </div>
