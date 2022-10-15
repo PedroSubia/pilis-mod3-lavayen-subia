@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
-import palettoLogo from '../../assets/logo.png';
+// import Logo from '../../assets/logo.png';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -34,7 +34,7 @@ const Navigation = () => {
               Nueva Tarjeta
             </Link>
           ) : (
-            <span className='nav-link'>Nueva Tarjeta</span>
+            <span className='nav-link' title='Debe iniciar sesion para agregar una ciudad'>Nueva Tarjeta</span>
           )}
 
           {currentUser ? (
