@@ -5,6 +5,7 @@ import { TarjetasContext } from '../../context/TarjetasContext';
 import { Link } from 'react-router-dom';
 
 import './TarjetaCreacion.css';
+import { getCities } from '../../DB/getData';
 
 const TarjetaCreacion = () => {
 
@@ -12,20 +13,23 @@ const TarjetaCreacion = () => {
   const navigate = useNavigate()
 
   const { register, handleSubmit, formState: { errors }, } = useForm({
-    defaultValues: { }
+    defaultValues: {}
   });
 
-  const onSubmit = (data) => {
-    console.log(data);
-    const ultimoID = tarjetas[( tarjetas.length - 1 )].id
-    const tarjetaNueva = {
-      id: ultimoID + 1,
-      cityName: data.nombre,
-      latitude : data.latitud,
-      longitude : data.longitud,
-      image : data.imagen, 
-    }
-    setTarjetas([...tarjetas, tarjetaNueva])
+  const onSubmit = async (data) => {
+    const ultimoID = tarjetas[(tarjetas.length - 1)].id
+    const tarjetaNueva = [
+      {
+        id: ultimoID + 1,
+        name: data.nombre,
+        lat: data.latitud,
+        lon: data.longitud,
+        image: data.imagen,
+      }
+    ]
+    const array = await getCities( tarjetaNueva)
+    
+    setTarjetas([...tarjetas].concat(array))
     navigate('/')
   }
 
@@ -45,7 +49,7 @@ const TarjetaCreacion = () => {
         <p>{errors.nombre?.message}</p>
 
         <input
-          className='input-card-name-form'        
+          className='input-card-name-form'
           type='text'
           placeholder='Latitud Geografica de la Ciudad'
           {...register('latitud', {
@@ -55,7 +59,7 @@ const TarjetaCreacion = () => {
         <p>{errors.latitud?.message}</p>
 
         <input
-          className='input-card-name-form'        
+          className='input-card-name-form'
           type='text'
           placeholder='Longitud Geografica de la Ciudad'
           {...register('longitud', {
@@ -65,7 +69,7 @@ const TarjetaCreacion = () => {
         <p>{errors.longitud?.message}</p>
 
         <input
-          className='input-card-name-form'        
+          className='input-card-name-form'
           type='text'
           placeholder='Link Imagen que representa a la Ciudad'
           {...register('imagen', {

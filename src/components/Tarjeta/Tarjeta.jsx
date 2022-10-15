@@ -9,7 +9,6 @@ const Tarjeta = ({ card }) => {
   const { tarjetas, setTarjetas } = useContext(TarjetasContext);
 
   const handleDelete = () => {
-    //Quitar de favoritos
     setTarjetas(
       tarjetas.filter((fav) => fav.id !== id )//!==
     );

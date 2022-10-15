@@ -1,7 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
-// import Logo from '../../assets/logo.png';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -10,7 +9,6 @@ const Navigation = () => {
 
   useEffect(() => {
     const userStored = localStorage.getItem('currentUser')
-    console.log({userStored})
     if (userStored) {
       setCurrentUser(JSON.parse(userStored))
     }
@@ -29,9 +27,15 @@ const Navigation = () => {
           <img src="https://w7.pngwing.com/pngs/958/648/png-transparent-the-weather-channel-inc-yahoo-computer-icons-weather-purple-violet-magenta-thumbnail.png" alt='Logo' className='logo' />
         </Link>
         <div className='nav-links-container'>
+          {
+            currentUser&&
+            (
+              <h2>{currentUser.email}</h2>  
+            )
+          }
           {currentUser ? (
             <Link className='nav-link' to='/card/create'>
-              Nueva Tarjeta
+              <b>Nueva Tarjeta</b>
             </Link>
           ) : (
             <span className='nav-link' title='Debe iniciar sesion para agregar una ciudad'>Nueva Tarjeta</span>
@@ -39,11 +43,11 @@ const Navigation = () => {
 
           {currentUser ? (
             <span className='nav-link' onClick={handleSignOut}>
-              Cerrar Sesión
+              <b>Cerrar Sesión</b>
             </span>
           ) : (
             <Link className='nav-link sign-in' to='/login'>
-              Iniciar Sesión
+              <b>Iniciar Sesión</b>
             </Link>
           )}
         </div>

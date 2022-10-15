@@ -14,7 +14,6 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(username.current)
 
     const user = {
       email: username.current.value,
@@ -82,6 +81,7 @@ const Login = () => {
       <div style={{ margin: 10 }}>
         <h4>Usuarios de prueba: lu14393@gmail.com</h4>
         <h4>Password de prueba: 123456</h4>
+        <h5>Mas usuarios de prueba en credenciales.txt</h5>
       </div>
     </>
   )
