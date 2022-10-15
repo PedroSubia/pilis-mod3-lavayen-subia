@@ -15,13 +15,10 @@ export const getCities = async (cities) => {
             image: cities[i].image,
             latitude: city.latitude,
             longitude: city.longitude,
-            // temperature: city.current_weather.temperature,
-            // velocidadviento: city.current_weather.windspeed
         }
         const {id, cityName, image, latitude, longitude} = clima
         const {current_weather} = city
         cityList.push({id, cityName, image, latitude, longitude, current_weather})
     }
-    console.log("ciudades", cityList)
     return cityList
 }
