@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 
 export const TarjetasContext = createContext({
-  tarjetas: [],
-  setTarjetas: () => {}
+  // tarjetas: [],
+  // setTarjetas: () => {}
 })
 
 export const TarjetasProvider = ({ children }) => {

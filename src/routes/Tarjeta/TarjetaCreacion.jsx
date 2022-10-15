@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { TarjetasContext } from '../../context/TarjetasContext';
@@ -17,14 +17,14 @@ const TarjetaCreacion = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    const ultimoID = tarjetas[( tarjetas.length - 1 )].id
     const tarjetaNueva = {
-      id: tarjetas.length + 1,
-      nombre: data.nombre,
-      latitud : data.latitud,
-      longitud : data.longitud,
-      imagen : data.imagen, 
+      id: ultimoID + 1,
+      cityName: data.nombre,
+      latitude : data.latitud,
+      longitude : data.longitud,
+      image : data.imagen, 
     }
-
     setTarjetas([...tarjetas, tarjetaNueva])
     navigate('/')
   }
