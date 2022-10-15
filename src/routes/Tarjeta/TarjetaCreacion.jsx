@@ -67,7 +67,7 @@ const TarjetaCreacion = () => {
         <input
           className='input-card-name-form'        
           type='text'
-          placeholder='Ingrese el link de una imagen que represente a la Ciudad'
+          placeholder='Link Imagen que representa a la Ciudad'
           {...register('imagen', {
             required: 'Debe ingresar un link',
           })}
