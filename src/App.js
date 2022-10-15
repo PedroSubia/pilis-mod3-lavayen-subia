@@ -9,7 +9,7 @@ import { TarjetasContext} from './context/TarjetasContext'
 import TarjetaDetalles from './routes/Tarjeta/TarjetaDetalles';
 import TarjetaCreacion from './routes/Tarjeta/TarjetaCreacion';
 import Navigation from './routes/Navigation/Navigation';
-import LoginRef from './routes/Login/LoginRef';
+import Login from './routes/Login/LoginRef';
 
 // import Login from './routes/Login/LoginRef';
 // import LoginControlled from './routes/Login/LoginControlled';

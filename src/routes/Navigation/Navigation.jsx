@@ -1,11 +1,12 @@
 import { useContext, useEffect } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 import palettoLogo from '../../assets/logo.png';
 import './Navigation.css';
 
 const Navigation = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const userStored = localStorage.getItem('currentUser')
@@ -17,6 +18,8 @@ const Navigation = () => {
 
   const handleSignOut = () => {
     setCurrentUser(null);
+    navigate("/login", {replace: true})
+    
   };
 
   return (
